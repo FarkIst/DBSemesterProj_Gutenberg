@@ -1,0 +1,21 @@
+{
+  "parser": "babel-eslint",
+  "extends": "eslint:recommended",
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "node": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": "off",
+    "strict": ["error", "global"],
+    "curly": "warn",
+    "no-unused-vars": [ "warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false } ],
+    "no-undef": "warn"
+  }
+}

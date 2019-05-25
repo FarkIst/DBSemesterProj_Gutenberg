@@ -1,0 +1,28 @@
+{
+  "presets": [
+    ["@babel/env",
+    {
+      "targets": {
+        "browsers": ["last 2 versions"]
+      }
+    }],
+    "@babel/react",
+    "@babel/typescript"
+  ],
+   "plugins": [
+        "@babel/proposal-class-properties",
+        "@babel/proposal-object-rest-spread",
+        "babel-plugin-styled-components",
+          ["module-resolver",
+          {
+            "extensions": [".js", ".jsx",".ts", ".tsx"
+            ],
+        "root": ["./src"
+            ],
+        "alias": {
+          "~": "./src/"
+            }
+          }
+        ]
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "*.{ts,tsx,js,jsx,css}": [
+      "prettier --write --single-quote",
+      "stylelint './app/**/*.js'",
+      "eslint --fix",
+      "git add"
+    ]
+  }

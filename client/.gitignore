@@ -1,0 +1,29 @@
+# output
+/build
+/storybook-static
+
+# libraries
+/node_modules
+
+# IDEs
+/.idea
+/.vscode
+/.vs
+/bin
+/obj
+/**/*.user
+/modules/*/*/bin/
+/modules/*/*/obj/
+
+# misc
+.DS_Store
+/.sass-cache
+/connect.lock
+/libpeerconnection.log
+npm-debug.log
+testem.log
+yarn-error.log
+webpack-test/
+
+# Test coverage
+/coverage
