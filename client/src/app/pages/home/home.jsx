@@ -20,7 +20,12 @@ class Home extends React.Component {
             dispatch(push('/booktitles'));
           }}
         />
-        <Button label="Submit" onClick={() => {}} />
+        <Button
+          label="BookCities"
+          onClick={() => {
+            dispatch(push('/bookcities'));
+          }}
+        />
         <Button label="Submit" onClick={() => {}} />
         <Button label="Submit" onClick={() => {}} />
       </div>

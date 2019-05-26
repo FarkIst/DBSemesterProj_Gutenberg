@@ -1,3 +1,4 @@
 import TitlesList from './titleslist';
+import CitiesMap from './citiesmap';
 
-export { TitlesList };
+export { TitlesList, CitiesMap };

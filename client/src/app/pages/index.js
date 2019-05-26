@@ -1,3 +1,5 @@
 import Home from './home';
 import BookTitles from './booktitles';
-export { Home, BookTitles };
+import BookCities from './bookcities';
+
+export { Home, BookTitles, BookCities };
