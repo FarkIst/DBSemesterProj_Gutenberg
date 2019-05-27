@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TextInput, Button } from 'grommet';
 import Map from '../../shared/components/map/Map';
+import { EntityTable } from '~/app/shared/components';
+
+const COLUMNS = [
+  {
+    property: 'Title',
+    label: 'Title',
+  },
+];
 
 export class MyApp extends Component {
   constructor(props) {
@@ -12,7 +20,6 @@ export class MyApp extends Component {
   }
 
   dispatchCities = () => {
-    console.log('HelloWorld');
     const { text } = this.state;
     const { dispatch } = this.props;
     dispatch({
@@ -23,7 +30,7 @@ export class MyApp extends Component {
   };
 
   render() {
-    const { cities, updating } = this.props;
+    const { authordata, updating } = this.props;
     const { text } = this.state;
     const muh = [];
     return updating ? (
@@ -31,16 +38,17 @@ export class MyApp extends Component {
     ) : (
       <div>
         <div style={{ width: '500px', border: '3px' }}>
-          <b>Book Title:</b>
+          <b>Author:</b>
           <div style={{ width: '350px' }}>
             <TextInput
               value={text}
               onChange={event => this.setState({ text: event.target.value })}
             />
           </div>
-          <Button label="Submit" onClick={this.dispatchCities} style={{}} />
+          <Button label="Submit" onClick={this.dispatchAuthorData} style={{}} />
         </div>
         <div styles={{}}>
+          <EntityTable COLUMNS={COLUMNS} DATA={[]} title={'Titles'} />
           <Map GEODATA={muh} />
         </div>
       </div>

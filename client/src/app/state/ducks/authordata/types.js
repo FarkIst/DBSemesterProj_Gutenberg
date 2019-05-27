@@ -1,0 +1,8 @@
+/**
+ * List of action types
+ */
+export const authordataConstants = {
+  AUTHORDATA_REQUEST: 'AUTHORDATA_REQUEST',
+  AUTHORDATA_SUCCESS: 'AUTHORDATA_SUCCESS',
+  AUTHORDATA_FAILURE: 'AUTHORDATA_FAILURE',
+};

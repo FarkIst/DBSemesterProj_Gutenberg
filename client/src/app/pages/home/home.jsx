@@ -26,8 +26,18 @@ class Home extends React.Component {
             dispatch(push('/bookcities'));
           }}
         />
-        <Button label="Submit" onClick={() => {}} />
-        <Button label="Submit" onClick={() => {}} />
+        <Button
+          label="BookMapByAuthor"
+          onClick={() => {
+            dispatch(push('/bookmapbyauthor'));
+          }}
+        />
+        <Button
+          label="BooksbyGeoloc"
+          onClick={() => {
+            dispatch(push('/geobooks'));
+          }}
+        />
       </div>
     );
   }

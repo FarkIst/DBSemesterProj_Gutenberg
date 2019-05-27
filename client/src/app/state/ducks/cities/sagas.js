@@ -10,16 +10,8 @@ import { citiesConstants } from './types';
  * [ { Cities } ]
  */
 function* fetchCities(action) {
-  try {
-    yield put(showLoading());
-    //  const data = yield call(getTitles);
-    yield put(actions.titlesSuccess([]));
-  } catch (e) {
-    return;
-    // yield put(actions.studentsFailure(data(e.message));
-  } finally {
-    yield put(hideLoading());
-  }
+  //  const data = yield call(getTitles, action.text);
+  yield put(actions.titlesSuccess([]));
 }
 
 /**

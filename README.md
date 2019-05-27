@@ -14,3 +14,22 @@ Express - React Application using MongoDB & MYSQL Databases
 * `/api/sql/BooksCitiesByAuthor`
 * `/api/sql/BookByGeo`
 * `/api/sql/BooksByCity`
+
+### How to run
+
+#### Server
+* Go to \server
+* `npm install`
+* `npm run start`
+
+#### Client
+* Go to \client
+* `npm install`
+* Open .development.env 
+To run using MongoDB set
+API=http://localhost:8000/api/mongo/
+To run using MySQL set
+API=http://localhost:8000/api/sql/
+* `npm run start`
+
+#### Data-insertion
