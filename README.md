@@ -54,4 +54,4 @@ Homepage: ![alt text](https://github.com/FarkIst/DBSemesterProj_Gutenberg/blob/m
 
 *Note: This is a SPA and has no server side rendering, so you must navigate through the links on the home-page shown above.*
 
-#### Grawler 
+#### Crawler

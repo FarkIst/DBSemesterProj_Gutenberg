@@ -30,7 +30,7 @@ app.use(cookieParser());
 
 // pretend to return favicon
 app.get('/favicon.ico', function (req, res) {
-	res.send(200);
+	res.sendStatus(200);
 });
 
 // Set the ENV variable to point to the right environment
