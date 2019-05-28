@@ -36,7 +36,9 @@ API=http://localhost:8000/api/sql/
 
 * Runs on __localhost:27000__
 
-__Home:__ ![alt text](https://github.com/FarkIst/DBSemesterProj_Gutenberg/blob/master/img/home.png "Home page nav bar")
+__ Navigating through the webpage:__
+
+Homepage: ![alt text](https://github.com/FarkIst/DBSemesterProj_Gutenberg/blob/master/img/home.png "Home page nav bar")
 
 | Button Link        | Question           | 
 | ------------- |:-------------:| 
