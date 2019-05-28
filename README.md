@@ -25,6 +25,7 @@ The client and server is fullstack Javascript, whilst the crawler has been writt
 #### Server
 * Go to \server
 * `npm install`
+* In `/server/src/mysqldb.js` change to your MySQL DB settings
 * `npm run start`
 
 #### Client
@@ -32,11 +33,13 @@ The client and server is fullstack Javascript, whilst the crawler has been writt
 * `npm install`
 * Open .development.env 
 
-To run using MongoDB set
-API=http://localhost:8000/api/mongo/
+To run using MongoDB set - 
 
-To run using MySQL set
-API=http://localhost:8000/api/sql/
+API=http://localhost:{?}/api/mongo/
+
+To run using MySQL set - 
+
+API=http://localhost:{?}/api/sql/
 * `npm run start`
 
 * Runs on __localhost:27000__
