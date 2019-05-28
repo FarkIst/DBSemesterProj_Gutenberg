@@ -17,6 +17,11 @@ Express - React Application using MongoDB & MYSQL Databases
 
 ### How to run
 
+#### About
+
+This application is split into the three parts - the client, server and the crawler(book processing/data insertion).
+The client and server is fullstack Javascript, whilst the crawler has been written in Python.
+
 #### Server
 * Go to \server
 * `npm install`
@@ -36,7 +41,7 @@ API=http://localhost:8000/api/sql/
 
 * Runs on __localhost:27000__
 
-__ Navigating through the webpage:__
+**Navigating through the webpage:**
 
 Homepage: ![alt text](https://github.com/FarkIst/DBSemesterProj_Gutenberg/blob/master/img/home.png "Home page nav bar")
 
@@ -47,6 +52,6 @@ Homepage: ![alt text](https://github.com/FarkIst/DBSemesterProj_Gutenberg/blob/m
 | BookMapByAuthor | 3. Given an author name your application lists all books written by that author and plots all cities mentioned in any of the books onto a map.    | 
 | BooksByGeoloc | 4. Given a geolocation, your application lists all books mentioning a city in vicinity of the given geolocation.      | 
 
-Note: This is a SPA and has no server side rendering, so you must navigate through the links on the home-page shown above.
+*Note: This is a SPA and has no server side rendering, so you must navigate through the links on the home-page shown above.*
 
-#### Data-insertion
+#### Grawler 
