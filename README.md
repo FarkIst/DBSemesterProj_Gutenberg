@@ -1,6 +1,5 @@
 # DBSemesterProj_Gutenberg
 Express - React Application using MongoDB & MYSQL Databases
----
 
 ### API
 
@@ -37,7 +36,7 @@ API=http://localhost:8000/api/sql/
 
 * Runs on __localhost:27000__
 
-Home: ![alt text](https://github.com/FarkIst/DBSemesterProj_Gutenberg/img/home.png "Home page nav bar")
+Home: ![alt text](https://github.com/FarkIst/DBSemesterProj_Gutenberg/blob/master/img/home.png "Home page nav bar")
 
 | Button Link        | Question           | 
 | ------------- |:-------------:| 
@@ -47,5 +46,3 @@ Home: ![alt text](https://github.com/FarkIst/DBSemesterProj_Gutenberg/img/home.p
 | BooksByGeoloc | 4. Given a geolocation, your application lists all books mentioning a city in vicinity of the given geolocation.      | 
 
 #### Data-insertion
-
----
