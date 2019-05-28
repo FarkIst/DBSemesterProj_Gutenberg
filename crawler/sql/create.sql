@@ -10,15 +10,15 @@ CREATE TABLE `gutenberg`.`books` (
 
 CREATE TABLE `gutenberg`.`cities` (
   `id` INT NOT NULL,
-  `name` VARCHAR(45) NULL,
+  `utf_name` VARCHAR(45) NULL,
+  `ascii_name` VARCHAR(45) NULL,
   `latitude` VARCHAR(45) NULL,
   `longitude` VARCHAR(45) NULL,
   PRIMARY KEY (`id`)
 );
 
 
-CREATE TABLE `gutenberg`.`books_cities_pivot` (
+CREATE TABLE `gutenberg`.`books_cities_mentions` (
   `book_id` INT NOT NULL,
-  `city_id` INT NOT NULL,
-  `occurances` INT NOT NULL
+  `city_id` INT NOT NULL
 );
