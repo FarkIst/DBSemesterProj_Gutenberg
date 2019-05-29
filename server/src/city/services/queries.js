@@ -9,11 +9,11 @@ var sql = require('../../mysqldb.js');
  */
 const getAllBookMentionsByCityName_SQL = (city_name, result) => {
    console.log(city_name);
-   sql.query(" SELECT DISTINCT Books.Id, Books.title, books_cities_pivot.city_id \
+   sql.query(" SELECT DISTINCT Books.Id, Books.title, books_cities_mentions.city_id \
    from Books \
-   INNER JOIN books_cities_pivot ON Books.Id = books_cities_pivot.book_id \
-   INNER JOIN cities ON books_cities_pivot.city_id = cities.id \
-   WHERE cities.name = ? ", city_name, function (err, res) {
+   INNER JOIN books_cities_mentions ON Books.Id = books_cities_mentions.book_id \
+   INNER JOIN cities ON books_cities_mentions.city_id = cities.id \
+   WHERE cities.ascii_name = ? ", city_name, function (err, res) {
          if (err) {
             console.log("error: ", err);
             result(err, null);

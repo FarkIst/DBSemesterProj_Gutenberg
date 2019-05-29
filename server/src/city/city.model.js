@@ -8,27 +8,29 @@ const { Schema } = mongoose
  */
 const citySchema = new Schema({
   id: {
-    type: String,
-    required: true,
-    minlength: 5,
-    maxlength: 1000
+    type: Number,
+    required: true
   },
-  name: {
+  utf_name: {
     type: String,
-    required: true,
     minlength: 1,
-    maxlength: 200
+    maxlength: 100
   }, 
-  geolocation: {
-    type: {
-      type: String,
-      enum: ['Point'],
-      required: true
-    },
-    coordinates: {
-      type: [Number],
-      required: true
-    }
+  ascii_name: {
+    type: String,
+    minlength: 1,
+    maxlength: 100
+  }, 
+  latitude: {
+    type: Number,
+  }, 
+  longitude: {
+    type: Number,
+  }, 
+  geoname_id: {
+    type: String,
+    minlength: 1,
+    maxlength: 100
   },
   created_at: Date,
   updated_at: Date

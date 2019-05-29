@@ -1,12 +1,13 @@
 'user strict';
 
+require('dotenv').config();
 var mysql = require('mysql');
 
 //local mysql db connection
 var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'sean666',
+  host: process.env.SQL_HOST,
+  user: process.env.SQL_USER,
+  password: process.env.SQL_PASS,
   database: 'Gutenberg'
 });
 

@@ -8,26 +8,25 @@ const { Schema } = mongoose
  */
 const bookSchema = new Schema({
   id: {
-    type: String,
+    type: Number,
     required: true,
     minlength: 5,
     maxlength: 1000
   },
   title: {
     type: String,
-    required: true,
-    minlength: 2,
+    minlength: 1,
     maxlength: 200
   },
   author: {
     type: String,
-    required: true,
-    minlength: 5,
+    minlength: 1,
     maxlength: 200
   },
-  content: {
+  number: {
     type: String,
-    required: true,
+    minlength: 1,
+    maxlength: 45
   },
   created_at: Date,
   updated_at: Date

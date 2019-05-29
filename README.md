@@ -1,6 +1,17 @@
 # DBSemesterProj_Gutenberg
 Express - React Application using MongoDB & MYSQL Databases
 
+#### Group-Name:
+
+maraca ChaCha
+
+#### Group-Members:
+
+* Arkadiusz Paryz
+* István Farkas
+* Mircea Vlad Burac
+* Sean Altoft
+
 ### API
 
 #### MongoDB Queries
@@ -25,8 +36,14 @@ The client and server is fullstack Javascript, whilst the crawler has been writt
 #### Server
 * Go to \server
 * `npm install`
-* In `/server/src/mysqldb.js` change to your MySQL DB settings
+* In `.env` change to your MySQL and MongoDB settings
+* In the ENV file you can also set the distance range at which to search for cities
+
+`DISTANCE={distance}`
+
+
 * `npm run start`
+
 *Your bash should show which port the server running on*
 
 #### Client
@@ -59,3 +76,12 @@ Homepage: ![alt text](https://github.com/FarkIst/DBSemesterProj_Gutenberg/blob/m
 *Note: This is a SPA and has no server side rendering, so you must navigate through the links on the home-page shown above.*
 
 #### Crawler
+
+
+### Database
+
+[Our relational-db creation schema](https://github.com/FarkIst/DBSemesterProj_Gutenberg/blob/master/crawler/sql/create.sql)
+
+#### ERD Model of our database:
+
+ ![alt text](https://github.com/FarkIst/DBSemesterProj_Gutenberg/blob/master/img/relational_model.png "erd diagram for database")

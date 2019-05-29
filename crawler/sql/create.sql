@@ -26,8 +26,8 @@ CREATE TABLE `gutenberg`.`books_cities_mentions` (
 );
 
 ALTER TABLE `gutenberg`.`books_cities_mentions` 
-ADD INDEX `book_id_idx` (`book_id` ASC) VISIBLE;
-;
+ADD INDEX `book_id_idx` (`book_id` ASC);
+
 ALTER TABLE `gutenberg`.`books_cities_mentions` 
 ADD CONSTRAINT `book_id`
   FOREIGN KEY (`book_id`)
@@ -36,11 +36,9 @@ ADD CONSTRAINT `book_id`
   ON UPDATE NO ACTION;
 
 ALTER TABLE `gutenberg`.`books_cities_mentions` 
-ADD INDEX `city_id_idx` (`city_id` ASC) VISIBLE;
-;
+ADD INDEX `city_id_idx` (`city_id` ASC);
 ALTER TABLE `gutenberg`.`books_cities_mentions` 
 ADD CONSTRAINT `city_id`
   FOREIGN KEY (`city_id`)
   REFERENCES `gutenberg`.`cities` (`id`)
   ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
