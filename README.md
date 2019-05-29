@@ -1,6 +1,15 @@
 # DBSemesterProj_Gutenberg
 Express - React Application using MongoDB & MYSQL Databases
 
+#### Groupname: maraca ChaCha
+
+#### Group-Members
+* Arkadiusz Paryz, 
+* István Farkas, 
+* Mircea Vlad Burac, 
+* Sean Altoft
+
+
 ### API
 
 #### MongoDB Queries
