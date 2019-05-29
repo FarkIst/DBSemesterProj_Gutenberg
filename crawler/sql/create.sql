@@ -43,4 +43,3 @@ ADD CONSTRAINT `city_id`
   FOREIGN KEY (`city_id`)
   REFERENCES `gutenberg`.`cities` (`id`)
   ON DELETE NO ACTION
-  ON UPDATE NO ACTION;
