@@ -3,7 +3,7 @@ Express - React Application using MongoDB & MYSQL Databases
 
 #### Group-Name:
 
-**maraca ChaCha**
+maraca ChaCha
 
 #### Group-Members:
 
