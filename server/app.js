@@ -13,6 +13,7 @@ const mongoRoute = require('./routes/mongo')
 const sqlRoute = require('./routes/sql')
 var routes = require('./routes');
 
+require("./src/mongoSetup.js").connect();
 require('dotenv').config();
 var app = express();
 
@@ -75,7 +76,7 @@ var logLevel = process.env.LOGGING_LEVEL;
 if (!(logLevel === 'info' || logLevel === 'warn' || logLevel === 'error' || logLevel === 'debug')) {
 	console.warn('LOGGING_LEVEL environment variable not set to a valid logging level. Using default level info');
 	logLevel = 'info';
-}
+} 
 
 try {
     fs.accessSync(app.config.LOGGING_DIRECTORY, fs.F_OK);
@@ -124,6 +125,8 @@ logger.stream = {
 };
 
 app.logger = logger;
+
+
 
 app.use(require("morgan")('short', {
 	"stream": logger.stream

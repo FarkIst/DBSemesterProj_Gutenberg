@@ -1,14 +1,16 @@
 # DBSemesterProj_Gutenberg
 Express - React Application using MongoDB & MYSQL Databases
 
-#### Groupname: maraca ChaCha
+#### Group-Name
+
+*maraca ChaCha*
 
 #### Group-Members
-* Arkadiusz Paryz, 
-* István Farkas, 
-* Mircea Vlad Burac, 
-* Sean Altoft
 
+* Arkadiusz Paryz
+* István Farkas
+* Mircea Vlad Burac
+* Sean Altoft
 
 ### API
 
@@ -34,8 +36,8 @@ The client and server is fullstack Javascript, whilst the crawler has been writt
 #### Server
 * Go to \server
 * `npm install`
-* In `/server/src/mysqldb.js` change to your MySQL DB settings
-* Go to the .env file and set in km: 
+* In `.env` change to your MySQL and MongoDB settings
+* In the ENV file you can also set the distance range at which to search for cities
 
 `DISTANCE={distance}`
 
