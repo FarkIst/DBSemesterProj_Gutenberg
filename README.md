@@ -69,4 +69,8 @@ Homepage: ![alt text](https://github.com/FarkIst/DBSemesterProj_Gutenberg/blob/m
 
 ### Database
 
-ERD Model of our database: ![alt text](https://github.com/FarkIst/DBSemesterProj_Gutenberg/blob/master/img/relational_model.png "erd diagram for database")
+[Our relational-db creation schema](https://github.com/FarkIst/DBSemesterProj_Gutenberg/blob/master/crawler/sql/create.sql)
+
+#### ERD Model of our database:
+
+ ![alt text](https://github.com/FarkIst/DBSemesterProj_Gutenberg/blob/master/img/relational_model.png "erd diagram for database")
