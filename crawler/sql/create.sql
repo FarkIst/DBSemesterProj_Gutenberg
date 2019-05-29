@@ -22,8 +22,7 @@ CREATE TABLE `gutenberg`.`cities` (
 
 CREATE TABLE `gutenberg`.`books_cities_mentions` (
   `book_id` INT NOT NULL,
-  `city_id` INT NOT NULL,
-  `type` VARCHAR(45) NOT NULL
+  `city_id` INT NOT NULL
 );
 
 ALTER TABLE `gutenberg`.`books_cities_mentions` 
