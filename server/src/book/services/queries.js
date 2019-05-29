@@ -10,7 +10,7 @@ var sql = require('../../mysqldb.js');
  */
 const getAllCityMentionsByBookTitle_SQL = (book_title, result) => {
   console.log(book_title);
-  sql.query("SELECT DISTINCT Cities.Id, Cities.geo \
+  sql.query("SELECT DISTINCT Cities.Id, Cities.latitude, Cities.longitude \
 from Cities \
 INNER JOIN books_cities_mentions ON Cities.Id = books_cities_mentions.city_id \
 INNER JOIN books ON books_cities_mentions.book_id = books.id \
@@ -52,7 +52,7 @@ WHERE books.author = ? ", author, function (err, res) {
       else {
         answer.books = res;
       }});
-  sql.query("SELECT DISTINCT Cities.Id, Cities.geo \
+  sql.query("SELECT DISTINCT Cities.Id, Cities.latitude, Cities.longitude \
 from Cities \
 INNER JOIN books_cities_mentions ON Cities.Id = books_cities_mentions.city_id \
 INNER JOIN books ON books_cities_mentions.book_id = books.id \
