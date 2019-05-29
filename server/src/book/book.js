@@ -1,5 +1,6 @@
 'use strict'
 
+var Query = require('./services/queries.js');
 const action = {}
 
 
@@ -14,7 +15,12 @@ action.CitiesByBookTitleMongo = (req, res, next) => {
  * Returns all cities by title in SQL
  */
 action.CitiesByBookTitleSQL = (req, res, next) => { 
-  return res.json({});
+  Query.CitiesByBookTitleSQL(req.query.title, function (err, result) {
+    if (err)
+      res.send(err);
+    console.log('res', result);
+    res.send(result);
+  });
 }
 
 /**
@@ -28,7 +34,12 @@ action.BooksCitiesByAuthorMongo = (req, res, next) => {
  * Returns all books and cities by author in SQL
  */
 action.BooksCitiesByAuthorSQL = (req, res, next) => {
-  return res.json({});
+  Query.BooksCitiesByAuthorSQL(req.query.author, function (err, result) {
+    if (err)
+      res.send(err);
+    console.log('res', result);
+    res.send(result);
+  });
 }
 
 /**
@@ -41,8 +52,13 @@ action.BooksByGeoMongo = (req, res, next) => {
 /**
  * Returns all books by geolocation in SQL
  */
-action.BooksByGeoSQL = (req, res, next) => { 
-  return res.json({});
+action.BooksByGeoSQL = (req, res, next) => {
+  Query.BooksByGeoSQL(req.query.latitude, req.query.longitude, function (err, result) {
+    if (err)
+      res.send(err);
+    console.log('res', result);
+    res.send(result);
+  });
 }
 
 module.exports = action

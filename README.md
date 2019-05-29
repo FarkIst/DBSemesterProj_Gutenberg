@@ -27,6 +27,7 @@ The client and server is fullstack Javascript, whilst the crawler has been writt
 * `npm install`
 * In `/server/src/mysqldb.js` change to your MySQL DB settings
 * `npm run start`
+
 *Your bash should show which port the server running on*
 
 #### Client
