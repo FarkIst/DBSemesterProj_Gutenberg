@@ -26,6 +26,11 @@ The client and server is fullstack Javascript, whilst the crawler has been writt
 * Go to \server
 * `npm install`
 * In `/server/src/mysqldb.js` change to your MySQL DB settings
+* Go to the .env file and set in km: 
+
+`DISTANCE={distance}`
+
+
 * `npm run start`
 
 *Your bash should show which port the server running on*
@@ -60,3 +65,8 @@ Homepage: ![alt text](https://github.com/FarkIst/DBSemesterProj_Gutenberg/blob/m
 *Note: This is a SPA and has no server side rendering, so you must navigate through the links on the home-page shown above.*
 
 #### Crawler
+
+
+### Database
+
+ERD Model of our database: ![alt text](https://github.com/FarkIst/DBSemesterProj_Gutenberg/blob/master/img/relational_model.png "erd diagram for database")
