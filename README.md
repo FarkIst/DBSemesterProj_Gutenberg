@@ -95,7 +95,7 @@ We simply read the .txt file of the Geonames "cities15000.txt" as a .CSV and ins
 This is needed for when we generate the mentions. 
 
 ##### For the third step: 
-We generate all of the books titles and offers by reading through the catalogue RDF which is a collection of all the titles and names/details of the books, but in a RDF-extension in an XML format. So we use regular expression "REGEX" to get the titles and names of the books, to save them to the database and the books-arrays. 
+We generate all of the books titles and offers by reading through the catalogue RDF which is a collection of all the titles and names/details of the books, but in a RDF extension file in an XML format. So we use regular expressions to get the titles and names of the books, to save them to the database and the books-arrays.
 
 ##### For the fourth and last step: 
 We made use of the Stanford NER Tagger/Classifier for each book (for our explanatory example we used 100 books, which resulted into ~5000 mentions). So essentially the Stanford scans everything concerning the books locations, which is essentially what we're trying to figure out, so we can apply a mention. By doing this we figure out if any of the locations found is in the given book, and if that is true we add it to the mentions. This can turn out to be a lenghty process depending on the specific book-size that has to be processed. 
