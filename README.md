@@ -86,24 +86,31 @@ This is used to create a connection to our database given the right parameters a
 ##### Importing the data into MySQL 
 This step required a number of processes to be ran: First of was the Gutenberg Book Files in which where we had to extract the city names, thereafter we had to extract the titles and author names from the RDF Files and process that through our crawler which then would load all of the data into our MySQL Database. 
 
-First of, we use the data from "geonames.org" as provided by the Project Description to provide a list of matching country names and city names in text, which is then further filtered with a provided list of city names "cities15000.txt"-file, which we have read as a .CSV 
+##### For the first step:
+We're use the data from "geonames.org" as provided by the Project Description to provide a list of matching country names and city names in text, which is then further filtered with a provided list of city names "cities15000.txt"-file, which we have read as a .CSV 
 Next step was to download all of the Project Gutenberg individual folders of books (+59000), which took over 30 hours to complete and process all of them. This is due to the files being processed individually since it's a single-threaded process which eventually ends up to coming down to read/write IOPS of your hardware. 
 
-For the second step, we simply read the .txt file of the Geonames "cities15000.txt" as a .CSV and insert that into the cities table using a simple "INSERT INTO" query into their rightful columns and adds them to the cities array. 
+##### For the second step: 
+We simply read the .txt file of the Geonames "cities15000.txt" as a .CSV and insert that into the cities table using a simple "INSERT INTO" query into their rightful columns and adds them to the cities array. 
 This is needed for when we generate the mentions. 
 
-For the third step, we generate all of the books titles and offers by reading through the catalogue RDF which is a collection of all the titles and names/details of the books, but in a RDF-extension in an XML format. So we use regular expression "REGEX" to get the titles and names of the books, to save them to the database and the books-arrays. 
+##### For the third step: 
+We generate all of the books titles and offers by reading through the catalogue RDF which is a collection of all the titles and names/details of the books, but in a RDF-extension in an XML format. So we use regular expression "REGEX" to get the titles and names of the books, to save them to the database and the books-arrays. 
 
-For the fourth and last step, here we made use of the Stanford NER Tagger/Classifier for each book (for our explanatory example we used 100 books, which resulted into ~5000 mentions). So essentially the Stanford scans everything concerning the books locations, which is essentially what we're trying to figure out, so we can apply a mention. By doing this we figure out if any of the locations found is in the given book, and if that is true we add it to the mentions. This can turn out to be a lenghty process depending on the specific book-size that has to be processed. 
+##### For the fourth and last step: 
+We made use of the Stanford NER Tagger/Classifier for each book (for our explanatory example we used 100 books, which resulted into ~5000 mentions). So essentially the Stanford scans everything concerning the books locations, which is essentially what we're trying to figure out, so we can apply a mention. By doing this we figure out if any of the locations found is in the given book, and if that is true we add it to the mentions. This can turn out to be a lenghty process depending on the specific book-size that has to be processed. 
 
-Further notes on "Cities" & "Books": 
+##### Further notes on "Cities" & "Books": 
 The cities which we work with, logically also contains the names of the cities, which is needed when we cross-mention the Stanford locations to the cities we got, and check if the cities are in the stanford array. 
 The books however, only need the IDs and the number of the book.
+Basically the cities and books array they contain the data for the cities and the books but they also contain the IDs of each insert that we did in the previous steps. Which now, means that we know what IDs to insert in the mentions table. 
 
-(...) Basically the cities and books array the contain the data for the cities and the books but they also contain the IDs of each insert that we did previously, so now we know what IDs to insert in the mentions table. So we figure out what mentions are in the cities by looking through the books, and for each book we look through the cities. We figure out if it's mentioned, we use that to generate an array to cross-mention that array to the cities. 
-
-(...) To be able to insert the mentions in Python in memory for the cities, get ids for all the cities then you get the mentions for all the cities, and then you figure out what cities are in each book, and because we have the ideas for that, then we can insert that into the mentions table. So that wouldn't work if we didn't load the cities and the books in memory each time. 
-Though if some problems messes up, we have to reinstantiate the whole database.  
+##### In-Memory Insertions:
+To be able to insert the mentions in Python, in memory for the cities. As repetitive as it is, we believe it's worth mentioning anyways.
+So it's required of us to receive all of the "ids" for all the cities, then the "mentions" for all the cities.
+We then proceed to figure out what cities are in each book, and because we have a solution for that based on the previous steps that are mentioned, we're able to insert that into the mentions table. 
+This procedure wouldn't work if we didn't load the cities and the books in memory each time. 
+However if a problem occurs, we have to reinstantiate the whole database.  
 
 ### Database
 
