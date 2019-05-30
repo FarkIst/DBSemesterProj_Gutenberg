@@ -112,6 +112,8 @@ We then proceed to figure out what cities are in each book, and because we have 
 This procedure wouldn't work if we didn't load the cities and the books in memory each time. 
 However if a problem occurs, we have to reinstantiate the whole database.   
 
+##### Populating the Database: 
+After the initial run through the "sql_crawler.ipynb", we export everything into custom SQL-scripts; "create.sql", "cities_and_books.sql" & "mentions.sql" in that order to populate the DB, instead of running the crawler multiple times. This is done as an "ease of use" measure, rather than running through the crawler again.
 
 ### Database
 
