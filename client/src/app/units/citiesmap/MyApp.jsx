@@ -10,14 +10,16 @@ export class MyApp extends Component {
       text: '',
     };
   }
-
+  componentWillReceiveProps() {
+    this.forceUpdate();
+  }
   dispatchCities = () => {
     console.log('HelloWorld');
     const { text } = this.state;
     const { dispatch } = this.props;
     dispatch({
       type: 'CITIES_REQUEST',
-      text,
+      title: text,
     });
     this.setState({ text: '' });
   };
@@ -25,10 +27,7 @@ export class MyApp extends Component {
   render() {
     const { cities, updating } = this.props;
     const { text } = this.state;
-    const muh = [];
-    return updating ? (
-      <Div> Loading </Div>
-    ) : (
+    return (
       <div>
         <div style={{ width: '500px', border: '3px' }}>
           <b>Book Title:</b>
@@ -41,7 +40,7 @@ export class MyApp extends Component {
           <Button label="Submit" onClick={this.dispatchCities} style={{}} />
         </div>
         <div styles={{}}>
-          <Map GEODATA={muh} />
+          <Map GEODATA={cities} />
         </div>
       </div>
     );

@@ -1,5 +1,5 @@
 {
-    "*.{ts,tsx,js,jsx,css}": [
+    "*.{ts,tsx,js,jsx}": [
       "prettier --write --single-quote",
       "stylelint './app/**/*.js'",
       "eslint --fix",

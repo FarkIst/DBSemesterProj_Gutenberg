@@ -33,11 +33,11 @@ const citiesFailure = (state, action) =>
  */
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case citiesConstants.TITLES_REQUEST:
+    case citiesConstants.CITIES_REQUEST:
       return citiesRequest(state, action);
-    case citiesConstants.TITLES_SUCCESS:
+    case citiesConstants.CITIES_SUCCESS:
       return citiesSuccess(state, action);
-    case citiesConstants.TITLES_FAILURE:
+    case citiesConstants.CITIES_FAILURE:
       return citiesFailure(state, action);
     default:
       return state;

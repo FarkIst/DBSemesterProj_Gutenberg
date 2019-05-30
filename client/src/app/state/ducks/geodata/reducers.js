@@ -25,7 +25,7 @@ const geoSuccess = (state, action) =>
  * Exception was caught during dispatch
  * @return the existing state, error is set to true and updating set to false
  */
-const citiesFailure = (state, action) =>
+const geoFailure = (state, action) =>
   updateObject(state, { geodata: [], error: true, updating: false });
 
 /**

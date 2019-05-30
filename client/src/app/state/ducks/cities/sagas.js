@@ -2,6 +2,7 @@ import { put, takeEvery, call } from 'redux-saga/effects';
 import { hideLoading, showLoading } from 'react-redux-loading-bar';
 
 import * as actions from './actions';
+import { getCities } from './services';
 
 import { citiesConstants } from './types';
 
@@ -10,8 +11,17 @@ import { citiesConstants } from './types';
  * [ { Cities } ]
  */
 function* fetchCities(action) {
-  //  const data = yield call(getTitles, action.text);
-  yield put(actions.titlesSuccess([]));
+  console.log('inside try catch');
+  try {
+    yield put(showLoading());
+    const response = yield call(getCities, action.title);
+    const data = yield response.json();
+    yield put(actions.citiesSuccess(data));
+  } catch (e) {
+    yield put(actions.citiesFailure(e.message));
+  } finally {
+    yield put(hideLoading());
+  }
 }
 
 /**

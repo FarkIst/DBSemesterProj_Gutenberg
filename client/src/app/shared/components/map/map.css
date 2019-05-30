@@ -1,0 +1,18 @@
+/* stylelint-ignore */
+.marker {
+  background-color: black;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* stylelint-ignore */
+.mapboxgl-popup {
+  max-width: 200px;
+}
+/* stylelint-ignore */
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
