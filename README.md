@@ -136,7 +136,16 @@ where cities.ascii_name = ?;
 ##### Given a book title, your application plots all cities mentioned in this book onto a map.
 
 ``` SQL
- SELECT books.id, cities.ascii_name, cities.longitude, cities.latitude
- FROM books INNER JOIN books_cities_mentions ON books.id = books_cities_mentions.book_id INNER JOIN cities
- ON cities.id = books_cities_mentions.city_id WHERE books.title = ?;
+select books.id, cities.ascii_name, cities.longitude, cities.latitude
+from books inner join books_cities_mentions ON books.id = books_cities_mentions.book_id inner join cities
+ on cities.id = books_cities_mentions.city_id where books.title = ?;
 ```
+#### Given an author name your application lists all books written by that author and plots all cities mentioned in any of the books onto a map.
+
+``` SQL
+select cities.id, cities.latitude, cities.longitude from cities
+inner join books_cities_mentions on cities.id = books_cities_mentions.city_id
+inner join books on books_cities_mentions.book_id = books.id
+where books.author = ?;
+```
+
