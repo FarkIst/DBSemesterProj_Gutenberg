@@ -106,11 +106,6 @@ The books however, only need the IDs and the number of the book.
 Basically the cities and books array they contain the data for the cities and the books but they also contain the IDs of each insert that we did in the previous steps. Which now, means that we know what IDs to insert in the mentions table. 
 
 ##### In-Memory Insertions:
-To be able to insert the mentions in Python, in memory for the cities. As repetitive as it is, we believe it's worth mentioning anyways.
-So it's required of us to receive all of the "ids" for all the cities, then the "mentions" for all the cities.
-We then proceed to figure out what cities are in each book, and because we have a solution for that based on the previous steps that are mentioned, we're able to insert that into the mentions table. 
-This procedure wouldn't work if we didn't load the cities and the books in memory each time. 
-However if a problem occurs, we have to reinstantiate the whole database.  
 
 ### Database
 
