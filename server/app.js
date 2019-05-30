@@ -2,6 +2,7 @@
 /*jslint node: true, nomen: true*/
 "use strict";
 
+var cors = require('cors')
 var express = require('express');
 var path = require('path');
 var morgan = require('morgan');
@@ -127,7 +128,7 @@ logger.stream = {
 app.logger = logger;
 
 
-
+app.use(cors());
 app.use(require("morgan")('short', {
 	"stream": logger.stream
 }));

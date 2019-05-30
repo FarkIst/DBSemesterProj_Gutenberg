@@ -1,7 +1,7 @@
-import { put, takeEvery, call } from 'redux-saga/effects';
+import { put, takeEvery, call, takeLatest } from 'redux-saga/effects';
 import { hideLoading, showLoading } from 'react-redux-loading-bar';
 
-import * as actions from './actions';
+import { titlesSuccess, titlesFailure } from './actions';
 import { getTitles } from './services';
 import { titleConstants } from './types';
 
@@ -10,14 +10,15 @@ import { titleConstants } from './types';
  * [ { Book } ]
  */
 function* fetchTitles(action) {
+  console.log(action.text);
   try {
-    yield put(showLoading());
-    const data = yield call(getTitles);
-    yield put(actions.titlesSuccess(data));
+    const response = yield call(getTitles, action.text);
+    console.log('outside of fetch call');
+    const data = yield response.json();
+    console.log(data);
+    yield put(titlesSuccess(data));
   } catch (e) {
-    // yield put(actions.studentsFailure(data(e.message));
-  } finally {
-    yield put(hideLoading());
+    yield put(titlesFailure(e.message));
   }
 }
 

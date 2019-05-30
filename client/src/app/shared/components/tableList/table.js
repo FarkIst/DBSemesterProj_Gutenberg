@@ -29,15 +29,22 @@ const EntityTable = props => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {props.DATA.map(datum => (
-            <TableRow key={datum.id}>
-              {props.COLUMNS.map(c => (
-                <TableCell key={c.property} scope={c.dataScope} align={c.align}>
-                  <Text>{c.format ? c.format(datum) : datum[c.property]}</Text>
-                </TableCell>
-              ))}
-            </TableRow>
-          ))}
+          {props.DATA.length > 0 &&
+            props.DATA.map(datum => (
+              <TableRow key={datum.id}>
+                {props.COLUMNS.map(c => (
+                  <TableCell
+                    key={c.property}
+                    scope={c.dataScope}
+                    align={c.align}
+                  >
+                    <Text>
+                      {c.format ? c.format(datum) : datum[c.property]}
+                    </Text>
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))}
         </TableBody>
         <TableFooter>
           <TableRow>

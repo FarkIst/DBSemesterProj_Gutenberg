@@ -34,8 +34,6 @@ export class MyApp extends Component {
   };
 
   onMapClick = (lat, lng) => {
-    console.log(lng);
-    console.log(lat);
     const { dispatch } = this.props;
     dispatch({
       type: 'GEO_REQUEST',
