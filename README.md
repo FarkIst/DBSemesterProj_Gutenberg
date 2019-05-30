@@ -112,3 +112,23 @@ Though if some problems messes up, we have to reinstantiate the whole database.
 #### ERD Model of our database:
 
  ![alt text](https://github.com/FarkIst/DBSemesterProj_Gutenberg/blob/master/img/relational_model.png "erd diagram for database")
+ 
+#### SQL Queries
+
+##### Given a city name your application returns all book titles with corresponding authors that mention this city.
+
+``` SQL
+select title, author from gutenberg.books
+inner join books_cities_mentions on books_cities_mentions.book_id = books.id
+inner join cities on cities.id = books_cities_mentions.city_id
+where cities.ascii_name = ?;
+
+```
+
+##### Given a book title, your application plots all cities mentioned in this book onto a map.
+
+``` SQL
+ SELECT books.id, cities.ascii_name, cities.longitude, cities.latitude
+ FROM books INNER JOIN books_cities_mentions ON books.id = books_cities_mentions.book_id INNER JOIN cities
+ ON cities.id = books_cities_mentions.city_id WHERE books.title = ?;
+```
