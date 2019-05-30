@@ -11,8 +11,10 @@ class NewMap extends React.Component {
       lng: -0.1404545,
       lat: 51.5220163,
       zoom: 7,
-      clicklng: '',
-      clicklat: '',
+      clicklng: '0',
+      clicklat: '0',
+      selectedLat: '0',
+      selectedLng: '0',
     };
   }
 
@@ -45,8 +47,6 @@ class NewMap extends React.Component {
         clicklng: JSON.stringify(e.lngLat.lng),
         clicklat: JSON.stringify(e.lngLat.lat),
       }));
-      document.getElementById('info').innerHTML =
-        JSON.stringify(e.point) + '<br />' + JSON.stringify(e.lngLat);
     });
 
     const { GEODATA } = this.props;
@@ -66,14 +66,21 @@ class NewMap extends React.Component {
   }
 
   handleClick = () => {
-    const { clicklng, clicklat } = this.state;
-    this.props.onMapClick(clicklng, clicklat);
+    const { clicklng, clicklat, selectedLat, selectedLng } = this.state;
+    this.setState(prevState => ({
+      ...prevState,
+      selectedLat: clicklat,
+      selectedLng: clicklng,
+    }));
+    this.props.onMapClick(this.state.selectedLng, this.state.selectedLat);
   };
 
   render() {
-    const { lng, lat, zoom } = this.state;
+    const { lng, lat, zoom, selectedLat, selectedLng } = this.state;
     return (
       <div>
+        <div
+        >{`SELECTED LONGITUDE: ${selectedLng} SELECTED LATITUDE: ${selectedLat} `}</div>
         <div className="inline-block absolute top left mt12 ml12 bg-darken75 color-white z1 py6 px12 round-full txt-s txt-bold">
           <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div>
         </div>

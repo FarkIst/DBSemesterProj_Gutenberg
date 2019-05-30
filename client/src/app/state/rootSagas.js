@@ -9,10 +9,5 @@ import geodata from './ducks/geodata/sagas';
  * Calls into action all the saga watcher
  */
 export default function* rootSaga() {
-  yield all(
-    [fork(titles)],
-    [fork(cities)],
-    [fork(authordata)],
-    [fork(geodata)],
-  );
+  yield all([fork(titles), fork(cities), fork(authordata), fork(geodata)]);
 }
