@@ -142,7 +142,7 @@ select books.id, cities.ascii_name, cities.longitude, cities.latitude
 from books inner join books_cities_mentions ON books.id = books_cities_mentions.book_id inner join cities
  on cities.id = books_cities_mentions.city_id where books.title = ?;
 ```
-#### Given an author name your application lists all books written by that author and plots all cities mentioned in any of the books onto a map.
+##### Given an author name your application lists all books written by that author and plots all cities mentioned in any of the books onto a map.
 
 ``` SQL
 select cities.id, cities.latitude, cities.longitude from cities
@@ -150,4 +150,13 @@ inner join books_cities_mentions on cities.id = books_cities_mentions.city_id
 inner join books on books_cities_mentions.book_id = books.id
 where books.author = ?;
 ```
+##### Given a geolocation, your application lists all books mentioning a city in vicinity of the given geolocation.
 
+``` SQL
+SELECT DISTINCT b.id, b.title, b.author, (6371 * acos(cos(radians("+latitude+")) * cos(radians(c.latitude)) * cos(radians(c.longitude) - radians("+longitude+")) + sin(radians("+latitude+")) * sin(radians(c.latitude)))) AS distance 
+  from Books b 
+  INNER JOIN books_cities_mentions ON b.Id = books_cities_mentions.book_id 
+  INNER JOIN cities c ON books_cities_mentions.city_id = c.id 
+  HAVING distance < "+process.env.distance+ " 
+  ORDER BY distance asc 
+```
